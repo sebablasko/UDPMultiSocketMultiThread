@@ -11,7 +11,7 @@
 int first_pack = 0;
 struct timeval dateInicio, dateFin;
 pthread_mutex_t lock;
-int mostrarInfo = 1;
+int mostrarInfo = 0;
 int MAX_PACKS = 1;
 int NTHREADS = 1;
 int NSOCKETS = 1;
