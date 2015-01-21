@@ -1,7 +1,7 @@
 #include <sys/time.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../ssocket.h"
+#include "ssocket.h"
 
 //Definiciones
 #define BUF_SIZE 10
