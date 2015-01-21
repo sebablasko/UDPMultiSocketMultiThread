@@ -11,7 +11,7 @@
 int first_pack = 0;
 struct timeval dateInicio, dateFin;
 pthread_mutex_t lock;
-int mostrarInfo = 0;
+int mostrarInfo = 1;
 int MAX_PACKS = 1;
 int NTHREADS = 1;
 int NSOCKETS = 1;
@@ -65,7 +65,7 @@ int main(int argc, char **argv){
 		fprintf(stderr, "Error de diseño: No pueden haber menos Threads que sockets\n");
 		exit(1);
 	}
-	if(mostrarInfo)	printf("Diseño: \n\t%d: Threads \n\t%d: Sockets\n\t%d: Paquetes a Enviar", NTHREADS, NSOCKETS, MAX_PACKS);
+	if(mostrarInfo)	printf("Diseño: \n\t%d: Threads \n\t%d: Sockets\n\t%d: Paquetes a Enviar\n", NTHREADS, NSOCKETS, MAX_PACKS);
 
 	//Definir Variables
 	int sockets_fd[NSOCKETS];
@@ -74,11 +74,11 @@ int main(int argc, char **argv){
 	char ports[10];
 	//char thread_name[NTHREADS][NAMELEN];
 
-	if(mostrarInfo)	printf("Puertos Activados: puerto\n");
+	if(mostrarInfo)	printf("\n\tPuertos Activados:\n");
 	int i;
 	for(i = 0; i < NSOCKETS; i++) {
 		sprintf(ports, "%d", port+i);
-		if(mostrarInfo)	printf("\t\t %s\n ", ports);
+		if(mostrarInfo)	printf("\t\t %s\n", ports);
 		sockets_fd[i] = udp_bind(ports);
 		if(sockets_fd[i] < 0) {
 			fprintf(stderr, "Error de bind al tomar el puerto\n");
