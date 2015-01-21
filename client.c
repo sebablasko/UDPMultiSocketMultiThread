@@ -13,7 +13,7 @@ struct timeval dateInicio, dateFin;
 pthread_mutex_t lock;
 char buf[BUF_SIZE];
 char* IP_DEST;
-int mostrarInfo = 0;
+int mostrarInfo = 1;
 int NTHREADS = 1;
 int MAX_PACKS = 1;
 double segundos;
