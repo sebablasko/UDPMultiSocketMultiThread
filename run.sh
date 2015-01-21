@@ -10,10 +10,12 @@ echo "Done"
 
 echo "Ejecutando Prueba..."
 
+#Definir aquí el límite de sockets
 for num_sockets in {1..3}
 do
 	linea=$num_sockets";"
 
+	#Definir aqui el límite de Threads
 	for ((num_threads=1 ; $num_threads<=6 ; num_threads++))
 	{
 		echo "Evaluando "$num_threads" Threads y con "$num_sockets" Sockets"
